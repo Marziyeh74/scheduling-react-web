@@ -143,10 +143,9 @@ const App = () => {
       console.log('data:');
       console.log(data);
       console.log(status);
-      if(status ===200){      
-        setTasks((draft)=> 
-           draft.push(data[0]) //data[0] is becase of api-gateway
-        );
+      if(status ===200){    
+         toast.success("مخاطب با موفقیت ساخته شد",{icon:"*"});  
+        setTasks( (draft)=> { draft.push(data[0]); });
 
         setFilteredTasks((draft)=> { draft.push(data[0]); });
         setLoading((prevLoading) => !prevLoading);
@@ -265,6 +264,7 @@ const App = () => {
 
       const {status} = await deleteTask(taskId);
       console.log(status);
+      toast.error("تسک با موفقیت حذف شد", {icon:""});
       if(status !== 200){
        
        setTasks(allTasks);
@@ -328,7 +328,8 @@ const App = () => {
       <div className="App">
         <ToastContainer 
           rtl={true}
-          
+          position='top-center'
+          theme='colored'
         />
       <Navbar />
       <Routes>
