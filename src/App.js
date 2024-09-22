@@ -8,7 +8,8 @@ import ViewTask from './components/Tasks/ViewTask';
 import EditTask from './components/Tasks/EditTask';
 import {Routes,Route,useNavigate,Navigate} from 'react-router-dom';
 import {useImmer} from  "use-immer";
-import {ToastContainer,toast} from "react-toastify";
+// import {ToastContainer,toast} from "react-toastify";
+import toast , {Toaster} from "react-hot-toast";
 import _ from 'lodash';
 // import { taskSchema } from './validations/taskValidation'; 
 // import {
@@ -326,11 +327,12 @@ const App = () => {
       }
     }> 
       <div className="App">
-        <ToastContainer 
+        {/* <ToastContainer 
           rtl={true}
           position='top-center'
           theme='colored'
-        />
+        /> */}
+        <Toaster  position='top-center'/>
       <Navbar />
       <Routes>
         <Route path="/" element={<Navigate to ="/tasks" />}/>

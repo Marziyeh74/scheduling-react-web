@@ -7,7 +7,8 @@ import { TaskContext } from "../../context/taskContext";
 import { Formik ,Form,Field,ErrorMessage} from "formik";
 import { taskSchema } from "../../validations/taskValidation";
 import {useImmer} from "use-immer";
-import {toast} from "react-toastify";
+// import {toast} from "react-toastify";
+import {toast} from "react-hot-toast";
 const EditTask = () => {
 
   const {taskId}=useParams();
@@ -64,7 +65,8 @@ const EditTask = () => {
         const {data,status} = await updateTask(values) ;
        
       if(status===200){
-        toast.info("تسک با موفقیت ویرایش شد");
+        // toast.info("تسک با موفقیت ویرایش شد");
+        toast.success("تسک با موفقیت ویرایش شد");
         setLoading(false);
         const allTasks=[...tasks];
         
