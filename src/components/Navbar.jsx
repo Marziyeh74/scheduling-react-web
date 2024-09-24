@@ -2,13 +2,14 @@ import SearchTask from "./Tasks/SearchTask";
 import {PURPLE,BACKGROUND} from '../helpers/colors';
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-
+import Colorfull from "../hoc/Colorfull";
 const Navbar = () => {
    const location = useLocation();
     return (
 
         <nav className="navbar navbar-dark navbar-expand-sm shadow-lg"
-        style={{backgroundColor:BACKGROUND}}>
+        // style={{backgroundColor:BACKGROUND}}
+        >
             <div className="container">
                 <div className="row w-100">
                     <div className="col">
@@ -39,5 +40,5 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+export default Colorfull(Navbar);
 
